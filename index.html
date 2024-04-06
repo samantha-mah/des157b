@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
     <!-- My Styles -->
     <link href="styles.css" rel="stylesheet">
 
@@ -26,84 +30,108 @@
 
 <body>
 
-    <div id="container">
-
-        <header>
+    <header>
+        <div class="container">
 
             <h1>Samantha Mah</h1>
 
-            <h2>DES 157B - Interactive Media III - (term, year & section)</h2>
+            <h2>DES 157B - Interactive Media III - SQ24</h2>
+
+        </div>
 
             <!--this is for the interactive banner-->
-            <div id="banner">
-                <h3>This is my banner!</h3>
+            <div id="banner"></div>
+
+            <!-- <button>switch</button> -->
+
+            <div id="toggle">
+                <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
             </div>
 
-        </header>
+    </header>
+
+    <div class="container">
 
         <main>
 
             <section id="projects">
 
-                <h3>ministudios</h3>
-                <nav>
-                    <ol>
-                        <li><a href="#">blockbuster video</a></li>
-                        <li><a href="#">check yourself</a></li>
-                        <li><a href="#">library liberty</a></li>
-                    </ol>
-                </nav>
-                <h3>toolkit</h3>
-                <nav>
-                    <ol>
-                        <li><a href="#">Toolkit Assignment 1</a></li>
-                        <li><a href="#">Toolkit Assignment 2</a></li>
-                        <li><a href="#">Toolkit Assignment 3</a></li>
-                    </ol>
-                </nav>
+                <button type="button" class="collapsible"><h3>ministudios</h3></button>
 
+                <div class="content">
+                    <nav>
+                        <ul>
+                            <li><a href="#">blockbuster video</a></li>
+                            <li><a href="#">check yourself</a></li>
+                            <li><a href="#">library liberty</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+            <section id="toolkit">
+
+                <button type="button" class="collapsible"><h3>toolkit</h3></button>
+                
+                <div class="content">
+                    <nav>
+                        <ul>
+                            <li><a href="#">toolkit assignment 1</a></li>
+                            <li><a href="#">toolkit assignment 2</a></li>
+                            <li><a href="#">toolkit assignment 3</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </section>
 
             <section id="research">
-                <h3>research</h3>
-                <nav>
-                    <ul>
-                        <li><a href="#">Research Assignment 1</a></li>
-                        <li><a href="#">Research Assignment 2</a></li>
-                        <li><a href="#">Research Assignment 3</a></li>
-                        <li><a href="#">Research Assignment 4</a></li>
-                        <li><a href="#">Research Assignment 5</a></li>
-                        <li><a href="#">Research Assignment 6</a></li>
-                    </ul>
-                </nav>
-
+                <button type="button" class="collapsible"><h3>research</h3></button>
+                
+                <div class="content">
+                    <nav>
+                        <ul>
+                            <li><a href="#">research assignment 1</a></li>
+                            <li><a href="#">research assignment 2</a></li>
+                            <li><a href="#">research assignment 3</a></li>
+                            <li><a href="#">research assignment 4</a></li>
+                            <li><a href="#">research assignment 5</a></li>
+                            <li><a href="#">research assignment 6</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </section>
 
             <section id="development">
-                <h3>development</h3>
-                <nav>
-                    <ul>
-                        <li><a href="#">Development Assignment 1</a></li>
-                        <li><a href="#">Development Assignment 2</a></li>
-                        <li><a href="#">Development Assignment 3</a></li>
-                        <li><a href="#">Development Assignment 4</a></li>
-                        <li><a href="#">Development Assignment 5</a></li>
-                        <li><a href="#">Development Assignment 6</a></li>
-                    </ul>
-                </nav>
+
+                <button type="button" class="collapsible"><h3>development</h3></button>
+                
+                <div class="content">
+                    <nav>
+                        <ul>
+                            <li><a href="#">development assignment 1</a></li>
+                            <li><a href="#">development assignment 2</a></li>
+                            <li><a href="#">development assignment 3</a></li>
+                            <li><a href="#">development assignment 4</a></li>
+                            <li><a href="#">development assignment 5</a></li>
+                            <li><a href="#">development assignment 6</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </section>
 
             <section id="capstone">
-                <h3>capstone</h3>
-                <nav>
-                    <ul>
-                        <li><a href="#">case study</a></li>
-                        <li><a href="#">project</a></li>
-                    </ul>
-                </nav>
-            </section>
 
-            <button>switch</button>
+                <button type="button" class="collapsible"><h3>capstone</h3></button>
+                
+                <div class="content">
+                    <nav>
+                        <ul>
+                            <li><a href="#">case study</a></li>
+                            <li><a href="#">project</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
 
         </main>
 
