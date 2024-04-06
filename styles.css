@@ -170,7 +170,7 @@ button.switch:hover {
     color: rgb(235, 235, 235)
 } */
 
-h1, h3 {
+h1, button {
     font-family: Fraunces;
 }
 
@@ -182,10 +182,6 @@ h2, li {
     font-family: DM sans;
     font-weight: 400;
     font-size: 16px;
-}
-
-h3 {
-    margin: 0;
 }
 
 #projects, #toolkit, #research, #development, #capstone {
