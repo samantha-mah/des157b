@@ -1,0 +1,58 @@
+.fa-expand {
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+    font-size: 36px;
+    color: white;
+}
+
+.fa-expand:hover, .fa-seedling:hover, .fa-water:hover {
+    cursor: pointer;
+}
+
+.fa-seedling {
+    position: absolute;
+    bottom: 7vw;
+    right: 2vw;
+    font-size: 36px;
+    color: white;
+}
+
+/* .fa-water {
+    position: absolute;
+    bottom: 12vw;
+    right: 2vw;
+    font-size: 36px;
+    color: white;
+} */
+
+#myVideo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+p {
+    color: white;
+    position: absolute;
+    z-index: 1;
+}
+
+#line1 {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    font-size: 50px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.showing {
+    opacity: 1;
+}
