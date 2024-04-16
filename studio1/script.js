@@ -2,9 +2,10 @@
     'use strict';
 
     const fs = document.querySelector('.fa-expand');
-    const volume = document.querySelector('.fa-volume-xmark');
+    const muteBtn = document.querySelector('.fa-volume-xmark');
+    const unmuteBtn = document.querySelector('.fa-volume-low');
     const video = document.querySelector('#myVideo');
-    const controls = document.querySelector("#controls");
+    const clicks = document.querySelectorAll('.fa-solid');
 
     const line1 = document.querySelector('#line1');
     const line2 = document.querySelector('#line2');
@@ -25,15 +26,18 @@
         }
     });
 
-    volume.addEventListener('click', function() {
+    clicks.addEventListener('click', function() {
         if (mode === 'muted') {
+            video.muted = false;
             video.volume = 0.5;
-            controls.innerHTML = `<i class="fa-solid fa-volume-low"></i>`;
+            muteBtn.className = 'hidden fa-solid fa-volume-xmark';
+            unmuteBtn.className = 'showing fa-solid fa-volume-low';
             mode = 'unmuted';
 
         } else {
-            video.volume = 0.5;
-            controls.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+            video.volume = 0;
+            muteBtn.className = 'showing fa-solid fa-volume-xmark';
+            unmuteBtn.className = 'hidden fa-solid fa-volume-low';
             mode = 'muted'
         }
     });

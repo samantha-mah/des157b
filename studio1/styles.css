@@ -10,7 +10,7 @@
     cursor: pointer;
 }
 
-.fa-volume-xmark {
+.fa-volume-xmark, .fa-volume-low{
     position: absolute;
     bottom: 7vw;
     right: 2vw;
