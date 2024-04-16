@@ -6,25 +6,17 @@
     color: white;
 }
 
-.fa-expand:hover, .fa-seedling:hover, .fa-water:hover {
+.fa-expand:hover, .fa-volume-xmark {
     cursor: pointer;
 }
 
-.fa-seedling {
+.fa-volume-xmark {
     position: absolute;
     bottom: 7vw;
     right: 2vw;
     font-size: 36px;
     color: white;
 }
-
-/* .fa-water {
-    position: absolute;
-    bottom: 12vw;
-    right: 2vw;
-    font-size: 36px;
-    color: white;
-} */
 
 #myVideo {
     position: fixed;
@@ -40,13 +32,36 @@ p {
     z-index: 1;
 }
 
-#line1 {
+#line1, #line2, #line3, #line4 {
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 40%;
     left: 50%;
     text-align: center;
     font-size: 50px;
+}
+
+#line1 {
+    font-family: "Fahkwang";
+    font-size: 7vw;
+    top: 30%;
+}
+
+#line2 {
+    font-family: "Fahkwang";
+    font-size: 3vw;
+    top: 45%;
+}
+
+#line3 {
+    font-family: "Fahkwang";
+    font-size: 3vw;
+    top: 30%;
+}
+
+#line4 {
+    font-family: "Fahkwang";
+    font-size: 3vw;
+    top: 30%;
 }
 
 .hidden {
