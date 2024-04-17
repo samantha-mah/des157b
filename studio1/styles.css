@@ -12,10 +12,38 @@
 
 .fa-volume-xmark, .fa-volume-low{
     position: absolute;
-    bottom: 7vw;
-    right: 2vw;
+    bottom: 2vw;
+    left: 2vw;
     font-size: 36px;
     color: white;
+}
+.fa-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 48px;
+    color: white;
+    transform: translate(-50%, -50%);
+    animation: heart 2s infinite alternate ease-in-out;
+  
+}
+
+@keyframes heart {
+    0% {
+      opacity: .5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .5;
+      transform: scale(1.5);
+    }
+  }
+
+#controls {
+    display: flex;
 }
 
 #myVideo {
@@ -24,6 +52,7 @@
     right: 0;
     min-width: 100%;
     min-height: 100%;
+    filter: brightness(0.75);
 }
 
 p {
@@ -38,30 +67,40 @@ p {
     left: 50%;
     text-align: center;
     font-size: 50px;
+    transition: ease-in-out 2s;
 }
 
-#line1 {
+#line1, #catch {
     font-family: "Fahkwang";
     font-size: 7vw;
     top: 30%;
+    font-style: italic;
 }
 
 #line2 {
-    font-family: "Fahkwang";
-    font-size: 3vw;
-    top: 45%;
+    font-family: "DM Sans";
+    font-size: 5vw;
+    top: 40%;
+    font-weight: 300;
 }
 
 #line3 {
-    font-family: "Fahkwang";
-    font-size: 3vw;
-    top: 30%;
+    font-family: "DM Sans";
+    font-size: 5vw;
+    top: 50%;
+    font-weight: 300;
 }
 
 #line4 {
-    font-family: "Fahkwang";
-    font-size: 3vw;
-    top: 30%;
+    font-family: "DM Sans";
+    font-size: 5vw;
+    top: 55%;
+    font-weight: 300;
+}
+
+#chasing {
+    font-family: 'Reenie Beanie';
+    font-size: 8vw;
 }
 
 .hidden {
@@ -70,4 +109,52 @@ p {
 
 .showing {
     opacity: 1;
+}
+
+@media only screen and (min-width: 600px) {
+    .fa-volume-xmark, .fa-volume-low{
+        bottom: 7vw;
+        right: 2vw;
+    }
+
+    .fa-volume-xmark, .fa-volume-low{
+        bottom: 2vw;
+        right: 5vw;
+    }
+
+    #line1, #line2, #line3, #line4 {
+        transform: translate(0,0);
+    }
+
+    #line1 {
+        font-size: 4vw;
+        top: 10%;
+        left: 10%;
+    }
+    
+    #line2 {
+        font-size: 3vw;
+        top: 30%;
+        left: 20%;
+    }
+    
+    #line3 {
+        font-size: 3vw;
+        top: 50%;
+        left: 40%;
+    }
+    
+    #line4 {
+        font-size: 4vw;
+        top: 70%;
+        right: 15%;
+    }
+
+    #chasing {
+        font-size: 5vw;
+    }
+
+    #catch {
+        font-size: 5vw;
+    }
 }
