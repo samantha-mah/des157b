@@ -1,0 +1,21 @@
+body {
+    background-image: url("images/morning.jpg");
+}
+
+p {
+    font-family: "DM Sans";
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    color: #fff;
+}
+
+#time {
+    font-family: "Fawkwang";
+    font-size: 48px;
+}
+
+#daylist {
+    font-size: 80px;
+    font-weight: 600;
+}
