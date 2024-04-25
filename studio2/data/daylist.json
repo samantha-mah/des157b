@@ -1,0 +1,50 @@
+{
+    "point1" : {
+        "time" : "11:25",
+        "mood" : "stealth slow tuesday morning",
+        "activity" : "doing work in studio"
+    },
+
+    "point2" : {
+        "time" : "4:23",
+        "mood" : "stealth night drive tuesday afternoon",
+        "activity" : "walking to the gym"
+
+    },
+
+    "point3" : {
+        "time" : "12:51",
+        "mood" : "calm clean girl wednesday afternoon",
+        "activity" : "making lunch"
+    },
+
+    "point4" : {
+        "time" : "4:25",
+        "mood" : "delulu kitsch wednesday afternoon",
+        "activity" : "riding the bus to class"
+    },
+
+    "point5" : {
+        "time" : "9:57",
+        "mood" : "peaceful slow r&b wednesday night",
+        "activity" : "doing homework"
+    },
+
+    "point6" : {
+        "time" : "",
+        "mood" : "",
+        "activity" : ""
+    },
+
+    "point7" : {
+        "time" : "",
+        "mood" : "",
+        "activity" : ""
+    },
+
+    "point8" : {
+        "time" : "",
+        "mood" : "",
+        "activity" : ""
+    }
+}
