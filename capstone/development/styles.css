@@ -1,0 +1,26 @@
+body {
+    width: 33vw;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Fraunces';
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'Fraunces';
+    font-size: 24px;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'DM Sans';
+    font-size: 16px;
+    line-height: 2rem;
+}
+
+section {
+    margin-bottom: 4vw;
+}

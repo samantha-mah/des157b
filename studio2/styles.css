@@ -1,5 +1,7 @@
 body {
     background-image: url("images/morning.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 p {
@@ -18,4 +20,12 @@ p {
 #daylist {
     font-size: 80px;
     font-weight: 600;
+}
+
+#interface {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    margin-left: 50%;
+    margin-right: 50%;
 }
