@@ -33,3 +33,13 @@ section {
 .annotation {
     padding-left: 96px;
 }
+
+img {
+    max-width: 50vw; 
+}
+
+a {
+    color: #000;
+    font-family: "DM Sans";
+    font-weight: 400;
+}
