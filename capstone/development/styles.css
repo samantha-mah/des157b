@@ -1,5 +1,5 @@
 body {
-    width: 33vw;
+    width: 50vw;
     margin: auto;
 }
 
@@ -23,4 +23,13 @@ p {
 
 section {
     margin-bottom: 4vw;
+}
+
+.citation {
+    padding-left: 48px;
+    text-indent: -48px;
+}
+
+.annotation {
+    padding-left: 96px;
 }
