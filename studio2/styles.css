@@ -1,7 +1,8 @@
-body {
-    background-image: url("images/morning.jpg");
+#daylist {
     background-repeat: no-repeat;
-    background-size: cover;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 p {
@@ -22,10 +23,26 @@ p {
     font-weight: 600;
 }
 
-#interface {
+/* #interface {
     position: absolute;
     bottom: 50%;
     width: 100%;
     margin-left: 50%;
     margin-right: 50%;
+} */
+
+.fa-backward-step {
+    position: absolute;
+    bottom: 25%;
+    left: 25%;
+    color: #fff;
+    font-size: 5vw;
+}
+
+.fa-forward-step {
+    position: absolute;
+    bottom: 25%;
+    right: 25%;
+    color: #fff;
+    font-size: 5vw;
 }
