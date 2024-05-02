@@ -2,56 +2,48 @@
     "point1" : {
         "time" : "11:25",
         "mood" : "stealth slow tuesday morning",
-        "activity" : "doing work in studio",
-        "image" : "1"
+        "activity" : "doing work in studio"
     },
 
     "point2" : {
         "time" : "4:23",
         "mood" : "stealth night drive tuesday afternoon",
-        "activity" : "walking to the gym",
-        "image" : "2"
+        "activity" : "walking to the gym"
     },
 
     "point3" : {
         "time" : "12:51",
         "mood" : "calm clean girl wednesday afternoon",
-        "activity" : "making lunch",
-        "image" : "3"
+        "activity" : "making lunch"
     },
 
     "point4" : {
         "time" : "4:25",
         "mood" : "delulu kitsch wednesday afternoon",
-        "activity" : "riding the bus to class",
-        "image" : "4"
+        "activity" : "riding the bus to class"
     },
 
     "point5" : {
         "time" : "9:57",
         "mood" : "peaceful slow r&b wednesday night",
-        "activity" : "doing homework",
-        "image" : "5"
+        "activity" : "doing homework"
     },
 
     "point6" : {
         "time" : "10:41",
         "mood" : "R&B Mix",
-        "activity" : "doing homework",
-        "image" : "6"
+        "activity" : "doing homework"
     },
 
     "point7" : {
         "time" : "10:44",
         "mood" : "Chill Mix",
-        "activity" : "getting ready to sleep",
-        "image" : "7"
+        "activity" : "getting ready to sleep"
     },
 
     "point8" : {
         "time" : "10:45",
         "mood" : "Gentle Morning Mix ",
-        "activity" : "doing work in studio",
-        "image" : "8"
+        "activity" : "doing work in studio"
     }
 }

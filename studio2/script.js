@@ -33,14 +33,15 @@ document.querySelector('.fa-backward-step').addEventListener('click', function()
 });
 
 function forwardInterface(value, jsonData) {
-    console.log(jsonData);
+    //console.log(jsonData);
     const image = document.querySelector('#daylist');
     const dataPoint = `point${value}`;
+    console.log(jsonData[dataPoint].time);
     let html = '<p>';
     html += `At ${jsonData[dataPoint].time} I was listening to ${[jsonData[dataPoint].mood]} while ${jsonData[dataPoint].activity}`;
     html += '</p>';
     document.querySelector('#result').innerHTML = html;
-    daylist.innerHTML = `<img id="daylist" src="images/1.jpg" alt="daylist 1">`;
+    daylist.innerHTML = `<img id="daylist" src="images/${jsonData[dataPoint]}.jpg" alt="daylist 1">`;
 }
 
 getData();
