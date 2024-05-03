@@ -40,7 +40,7 @@ function forwardInterface(value, jsonData) {
     html += `At ${jsonData[dataPoint].time} I was listening to ${[jsonData[dataPoint].mood]} while ${jsonData[dataPoint].activity}`;
     html += '</p>';
     document.querySelector('#result').innerHTML = html;
-    playlist.innerHTML = `<img id="playlist" src="images/${jsonData[dataPoint]}.jpg" alt="daylist 1">`;
+    playlist.innerHTML = `<img id="playlist" src="images/${jsonData[dataPoint].image}.jpg" alt="daylist">`;
     console.log(playlist.innerHTML);
 }
 
