@@ -21,13 +21,12 @@ document.querySelector('.fa-forward-step').addEventListener('click', function() 
     if (currentPoint == 10 ) {
         currentPoint = 1;
     }
-    
     currentPoint++;
     forwardInterface(currentPoint, globalData);
 })
 
 document.querySelector('.fa-backward-step').addEventListener('click', function() {
-    console.log("clicked");
+    // console.log("clicked");
     const newValue = this.value;
     forwardInterface(newValue, globalData);
 });
@@ -36,12 +35,13 @@ function forwardInterface(value, jsonData) {
     //console.log(jsonData);
     const image = document.querySelector('#daylist');
     const dataPoint = `point${value}`;
-    console.log(jsonData[dataPoint].time);
+    // console.log(jsonData[dataPoint].time);
     let html = '<p>';
     html += `At ${jsonData[dataPoint].time} I was listening to ${[jsonData[dataPoint].mood]} while ${jsonData[dataPoint].activity}`;
     html += '</p>';
     document.querySelector('#result').innerHTML = html;
-    daylist.innerHTML = `<img id="daylist" src="images/${jsonData[dataPoint]}.jpg" alt="daylist 1">`;
+    playlist.innerHTML = `<img id="playlist" src="images/${jsonData[dataPoint]}.jpg" alt="daylist 1">`;
+    console.log(playlist.innerHTML);
 }
 
 getData();

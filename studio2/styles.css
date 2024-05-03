@@ -1,25 +1,16 @@
-#daylist {
-    background-repeat: no-repeat;
+#playlist {
     overflow: hidden;
     width: 100vw;
 }
 
-p {
+#result {
     font-family: "DM Sans";
     text-align: center;
     margin: auto;
     width: 100%;
     color: #fff;
-}
-
-#time {
-    font-family: "Fawkwang";
-    font-size: 48px;
-}
-
-#daylist {
-    font-size: 80px;
-    font-weight: 600;
+    position: absolute;
+    top: 10vw;
 }
 
 /* #interface {
