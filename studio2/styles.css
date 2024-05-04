@@ -13,13 +13,13 @@ h1 {
 #title-1 {
     font-family: "DM Sans";
     font-weight: 700;
-    font-size: 80px;
+    font-size: 64px;
 }
 
 #title-2 {
     font-family: "Fahkwang";
     font-weight: 500;
-    font-size: 80px;
+    font-size: 64px;
 }
 
 #time {
@@ -61,16 +61,8 @@ h1 {
     width: 100%;
     color: #fff;
     position: absolute;
-    top: 8vw;
+    top: 7vw;
 }
-
-/* #interface {
-    position: absolute;
-    bottom: 50%;
-    width: 100%;
-    margin-left: 50%;
-    margin-right: 50%;
-} */
 
 .fa-backward-step {
     position: absolute;
