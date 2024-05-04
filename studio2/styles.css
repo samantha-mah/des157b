@@ -3,6 +3,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
+    height: 100vh;
+    background-position: center;
 }
 
 h1 {
@@ -47,11 +49,10 @@ h1 {
 #playlist {
     position: absolute;
     display: block;
-    width: 20vw;
+    width: 50vw;
     left: 50%;
     bottom: 50%;
     transform: translate(-50%, 65%);
-
 }
 
 .result {
@@ -61,21 +62,46 @@ h1 {
     width: 100%;
     color: #fff;
     position: absolute;
-    top: 7vw;
+    top: 25vw;
 }
 
 .fa-backward-step {
     position: absolute;
-    bottom: 30%;
-    left: 25%;
+    bottom: 40%;
+    left: 10%;
     color: #fff;
-    font-size: 5vw;
+    font-size: 10vw;
 }
 
 .fa-forward-step {
     position: absolute;
-    bottom: 30%;
-    right: 25%;
+    bottom: 40%;
+    right: 10%;
     color: #fff;
-    font-size: 5vw;
+    font-size: 10vw;
+}
+
+@media only screen and (min-width: 600px) {
+    .result {
+        top: 7vw;
+    }
+
+    #playlist {
+        width: 20vw;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 65%);
+    }
+
+    .fa-backward-step {
+        bottom: 30%;
+        left: 25%;
+        font-size: 5vw;
+    }
+    
+    .fa-forward-step {
+        bottom: 30%;
+        right: 25%;
+        font-size: 5vw;
+    }
 }
