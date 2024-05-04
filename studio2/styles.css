@@ -1,9 +1,40 @@
-#playlist {
+body {
+    background-image: url('images/morning.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     overflow: hidden;
-    width: 100vw;
 }
 
-#result {
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+#title-1 {
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 80px;
+}
+
+#title-2 {
+    font-family: "Fahkwang";
+    font-weight: 500;
+    font-size: 80px;
+}
+
+#time {
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 80px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 10vw;
+}
+
+#daylist {
     font-family: "DM Sans";
     text-align: center;
     margin: auto;
@@ -11,6 +42,26 @@
     color: #fff;
     position: absolute;
     top: 10vw;
+}
+
+#playlist {
+    position: absolute;
+    display: block;
+    width: 20vw;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 65%);
+
+}
+
+.result {
+    font-family: "DM Sans";
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 8vw;
 }
 
 /* #interface {
@@ -23,7 +74,7 @@
 
 .fa-backward-step {
     position: absolute;
-    bottom: 25%;
+    bottom: 30%;
     left: 25%;
     color: #fff;
     font-size: 5vw;
@@ -31,7 +82,7 @@
 
 .fa-forward-step {
     position: absolute;
-    bottom: 25%;
+    bottom: 30%;
     right: 25%;
     color: #fff;
     font-size: 5vw;

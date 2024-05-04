@@ -17,7 +17,7 @@ function outputHTML (data) {
 }
 
 document.querySelector('.fa-forward-step').addEventListener('click', function() {
-    console.log("clicked");
+    // console.log("clicked");
     if (currentPoint == 10 ) {
         currentPoint = 1;
     }
@@ -27,21 +27,28 @@ document.querySelector('.fa-forward-step').addEventListener('click', function() 
 
 document.querySelector('.fa-backward-step').addEventListener('click', function() {
     // console.log("clicked");
-    const newValue = this.value;
-    forwardInterface(newValue, globalData);
+
+    if (currentPoint == 1) {
+        currentPoint = 10;
+    }
+    currentPoint--;
+    forwardInterface(currentPoint, globalData);
 });
 
 function forwardInterface(value, jsonData) {
     //console.log(jsonData);
-    const image = document.querySelector('#daylist');
+    const playlist = document.querySelector('#playlist');
     const dataPoint = `point${value}`;
     // console.log(jsonData[dataPoint].time);
     let html = '<p>';
     html += `At ${jsonData[dataPoint].time} I was listening to ${[jsonData[dataPoint].mood]} while ${jsonData[dataPoint].activity}`;
     html += '</p>';
-    document.querySelector('#result').innerHTML = html;
-    playlist.innerHTML = `<img id="playlist" src="images/${jsonData[dataPoint].image}.jpg" alt="daylist">`;
-    console.log(playlist.innerHTML);
+    document.querySelector('.result').innerHTML = html;
+    playlist.src = `${jsonData[dataPoint].images}`;
+    // console.log(playlist);
+    document.body.style.backgroundImage = `url('${jsonData[dataPoint].background}')`;
 }
+
+
 
 getData();
