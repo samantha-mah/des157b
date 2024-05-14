@@ -1,0 +1,116 @@
+body {
+    color: #333;
+    max-width: 40vw;
+    margin: auto;
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+}
+
+input, textarea {
+    display: block;
+    margin-bottom: 32px;
+}
+
+h1 {
+    font-family: "Gochi Hand";
+    font-size: 80px;
+}
+
+p, label {
+    font-family: "Reddit Sans";
+    font-size: 16px;
+    line-height: 2rem;
+}
+
+#about {
+    margin: 16vw 0;
+}
+
+button, #submit {
+    font-family: "Reddit Sans";
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    color: #fff;
+    border-radius: 4px;
+    background: #333;
+    display: block;
+}
+
+#card {
+    width: 270px;
+    height: 378px;
+    margin: 50px auto;
+    border-radius: 16px;
+    background-image: url('images/card.png');
+    background-position: bottom;
+    -webkit-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+    box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+}
+
+#card p {
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+    display: block;
+    padding: 50% 16px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    color: #C8C8C8;
+    text-decoration: none;
+}
+
+#upload {
+    border: solid #C8C8C8;
+    width: 270px;
+    height: 378px;
+    border-radius: 16px;
+}
+
+#form {
+    margin: auto;
+}
+
+#play {
+    margin: 32px auto 48px auto;
+    border: #FC9310;
+    background: #FC9310;
+}
+
+#response {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+
+}
+
+label, input {
+    margin: 16px 0 0 16px;
+}
+
+#title {
+    margin-top: 0;
+}
+
+#fileupload {
+    margin-bottom: 32px;
+}
+
+#submit {
+    margin: 120px auto 0 auto;
+}
+
+#resized-img {
+    opacity: 0;
+}
