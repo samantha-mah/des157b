@@ -118,10 +118,10 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
         resizedImg = false;
       }
       document.querySelector('#square-img img').src = squareThumb;
-      uploadData(name, file, resizedImg, squareThumb, title, description);
+      uploadData(name, file, resizedImg, squareThumb, title);
     }
   
-    async function uploadData(name, originalFile, resizedFile, squareThumb, title, description){
+    async function uploadData(name, originalFile, resizedFile, squareThumb, title){
       const myNewObject = new Parse.Object('photos');
       myNewObject.set('filename', name);
       // handle images that have been resized...
@@ -133,15 +133,19 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
   
       myNewObject.set('squarethumb', new Parse.File(name, { base64: squareThumb }));
       myNewObject.set('title', title);
-      myNewObject.set('description', description);
+      // myNewObject.set('description', description);
       try {
         const result = await myNewObject.save();
       } catch (error) {
         console.error('Error while creating pictures: ', error);
       }
-      document.querySelector('#title').innerHTML = "<p>`title`</p>";
+
+      // document.querySelector('#titlename').innerHTML = `<p>${title}</p>`;
+
     }
-  
+
+   
+
     // Helper function 
     // this came off of stack overflow. I tried to rewrite it in a more readable
     // way, but I have not been successful yet.
@@ -153,6 +157,42 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
           width: img.width
         });
       }
-      img.src = dataURL;
+      // img.src = dataURL;
     });
+
+    async function displaySubmissions() {
+      const photos = Parse.Object.extend('photos');
+      const query = new Parse.Query(photos);
+      const results = await query.ascending('createdAt').find();
+      console.log(results);
+
+      results.forEach(function(submission) {
+          const id = submission.id;
+          const squarethumb = submission.get('squarethumb');
+          const title = submission.get('title');
+
+          const theListItem = document.createElement('li');
+          theListItem.setAttribute('id', `r-${id}`);
+          theListItem.innerHTML = `<div class="name">
+              ${fname} ${lname}
+          </div>
+          <div class="email">
+              <i class="fas fa-envelope-square"></i> ${email}
+          </div>
+          <div class="social">
+              <a href="${facebook}"><i class="fab fa-facebook-square"></i></a>
+              <a href="${twitter}"><i class="fab fa-twitter-square"></i></a>
+              <a href="${instagram}"><i class="fab fa-instagram"></i></a>
+              <a href="${linkedin}"><i class="fab fa-linkedin"></i></a>
+          </div>
+          <i class="fas fa-edit"></i>
+          <i class="fas fa-times-circle"></i>`;
+
+      friendList.append(theListItem);
+
+      });
+  }
+
+  displayFriends();
+
   })();
