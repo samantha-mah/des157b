@@ -26,13 +26,11 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
     let imgOrientation;
     let resizedImg = false;
     let title;
-    let description;
     let file;
   
     document.querySelector('#upload').addEventListener('submit', function(event){
       event.preventDefault();
       title = document.querySelector('#title').value;
-    //   description = document.querySelector('#description').value;
   
       const fileUpload = document.querySelector('#fileupload');
       if (fileUpload.files.length > 0) {
@@ -133,7 +131,6 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
   
       myNewObject.set('squarethumb', new Parse.File(name, { base64: squareThumb }));
       myNewObject.set('title', title);
-      // myNewObject.set('description', description);
       try {
         const result = await myNewObject.save();
       } catch (error) {
@@ -143,8 +140,6 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
       // document.querySelector('#titlename').innerHTML = `<p>${title}</p>`;
 
     }
-
-   
 
     // Helper function 
     // this came off of stack overflow. I tried to rewrite it in a more readable
@@ -164,6 +159,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
       const photos = Parse.Object.extend('photos');
       const query = new Parse.Query(photos);
       const results = await query.ascending('createdAt').find();
+      const submissionList = document.querySelector('main ol');
       console.log(results);
 
       results.forEach(function(submission) {
@@ -173,26 +169,20 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
 
           const theListItem = document.createElement('li');
           theListItem.setAttribute('id', `r-${id}`);
-          theListItem.innerHTML = `<div class="name">
-              ${fname} ${lname}
+          theListItem.innerHTML =
+          
+          `<div class="titlename">
+            <h2>${title}<h/2>
           </div>
-          <div class="email">
-              <i class="fas fa-envelope-square"></i> ${email}
-          </div>
-          <div class="social">
-              <a href="${facebook}"><i class="fab fa-facebook-square"></i></a>
-              <a href="${twitter}"><i class="fab fa-twitter-square"></i></a>
-              <a href="${instagram}"><i class="fab fa-instagram"></i></a>
-              <a href="${linkedin}"><i class="fab fa-linkedin"></i></a>
-          </div>
-          <i class="fas fa-edit"></i>
-          <i class="fas fa-times-circle"></i>`;
+          <div class="photo">
+             <img src="${squarethumb}">
+          </div>`
 
-      friendList.append(theListItem);
+      submissionList.append(theListItem);
 
       });
-  }
+    }
 
-  displayFriends();
+  displaySubmissions();
 
-  })();
+})();
