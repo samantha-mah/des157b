@@ -19,6 +19,7 @@ function scrollFunction() {
 Parse.initialize("LjaN0AaAlVisq20wmpl4XlbghWz1LAFHVidMYSNb","3FHTRYEzDk53eEwQfxftjla9Flp8hNcewUJOzsFx");
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
+// Resizing image
 (function(){
     'use strict';
   
@@ -155,18 +156,41 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
       // img.src = dataURL;
     });
 
+    // Get URL for photo
+    async function getNewPhoto(photoId){
+      // which "object" are we dealing with (database table)
+      const records = Parse.Object.extend('photos');
+      // make a new query
+      const query = new Parse.Query(records);
+      // Find the record you just added
+      query.equalTo("objectId", photoId);
+      try{
+        // results holds the whole record and meta data about the record
+        const results = await query.find();
+        // The .get() method gets a speficif field. The url() method is special for files
+        const photoURL = results[0].get('file').url();
+        // get the photo file name from the filename field
+        const photoName = results[0].get('filename');
+        // pass both values into the showUploadedPhoto function
+        showUploadedPhoto(photoURL, photoName);
+      } catch (error) {
+          console.error('Error while getting photo', error);
+      } 
+    }
+
+    // Display all submissions
     async function displaySubmissions() {
       const photos = Parse.Object.extend('photos');
       const query = new Parse.Query(photos);
       const results = await query.ascending('createdAt').find();
       const submissionList = document.querySelector('main ol');
       console.log(results);
-
+  
       results.forEach(function(submission) {
           const id = submission.id;
           const squarethumb = submission.get('squarethumb');
           const title = submission.get('title');
-
+  
           const theListItem = document.createElement('li');
           theListItem.setAttribute('id', `r-${id}`);
           theListItem.innerHTML =
@@ -175,14 +199,14 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
             <h2>${title}<h/2>
           </div>
           <div class="photo">
-             <img src="${squarethumb}">
+            <img src="${photoURL} alt="${title}">
           </div>`
-
+  
       submissionList.append(theListItem);
+      console.log(photoURL);
 
       });
     }
-
-  displaySubmissions();
-
+  
+    displaySubmissions();
 })();
