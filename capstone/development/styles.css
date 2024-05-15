@@ -15,7 +15,7 @@ h2 {
     font-weight: 500;
 }
 
-p {
+p, ol {
     font-family: 'DM Sans';
     font-size: 16px;
     line-height: 2rem;
