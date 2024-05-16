@@ -32,23 +32,27 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
     document.querySelector('#upload').addEventListener('submit', function(event){
       event.preventDefault();
       title = document.querySelector('#title').value;
-  
+      
       const fileUpload = document.querySelector('#fileupload');
       if (fileUpload.files.length > 0) {
           file = fileUpload.files[0];
           const name = fileUpload.files[0].name;
           const type = fileUpload.files[0].type;
+          
           if(type == 'image/jpeg' || type == 'image/png'){
             // Get the data URL of the image as a string
             const fileAsDataURL = window.URL.createObjectURL(file);
+            console.log(fileAsDataURL);
             handleImg(fileAsDataURL, name, imgOrientation);
           } else { alert('the file is not a .jpg or .png file'); }
       }
     });
   
     async function handleImg(imageUrl, name, imgOrientation){
+      console.log('in here');
       const dimensions = await getHeightAndWidthFromDataUrl(imageUrl);
-      //console.log(dimensions.height, dimensions.width);
+      
+      console.log(dimensions.height, dimensions.width);
       // if image is small enough and does not need to be resized...
       if( dimensions.height < 800 && dimensions.width < 1000 ){
         resizedImg = false;
@@ -64,6 +68,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
         } else if ( dimensions.width > dimensions.height ){
           resizedImg = true;
           imgOrientation = 'wide';
+          
           resizeImg(imageUrl, name, imgOrientation)
         }
         // image is square...
@@ -75,6 +80,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
     }
   
     async function resizeImg(imageUrl, name, imgOrientation){
+      
       let squareThumb;
       // make a square thumbnail for any image...
       const image = await Jimp.read(imageUrl);
@@ -83,6 +89,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
               console.log(err);
           } else {
             squareThumb = result;
+            console.log(squarethumb);
           }
       });
       // if the image needs to be resized...
@@ -146,6 +153,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
     // this came off of stack overflow. I tried to rewrite it in a more readable
     // way, but I have not been successful yet.
     const getHeightAndWidthFromDataUrl = dataURL => new Promise(resolve => {
+      console.log('getting dimensions');
       const img = new Image();
       img.onload = () => {
         resolve({
@@ -184,7 +192,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
       const query = new Parse.Query(photos);
       const results = await query.ascending('createdAt').find();
       const submissionList = document.querySelector('main section');
-      console.log(results);
+      //console.log(results);
   
       results.forEach(function(submission) {
           const id = submission.id;
