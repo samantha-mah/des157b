@@ -44,60 +44,6 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
             handleImg(fileAsDataURL, name, imgOrientation);
           } else { alert('the file is not a .jpg or .png file'); }
       }
-
-      // Get URL for photo
-    async function getNewPhoto(photoId){
-      // which "object" are we dealing with (database table)
-      const records = Parse.Object.extend('photos');
-      // make a new query
-      const query = new Parse.Query(records);
-      // Find the record you just added
-      query.equalTo("objectId", photoId);
-      try{
-        // results holds the whole record and meta data about the record
-        const results = await query.find();
-        // The .get() method gets a speficif field. The url() method is special for files
-        const photoURL = results[0].get('file').url();
-        // get the photo file name from the filename field
-        const photoName = results[0].get('filename');
-        // pass both values into the showUploadedPhoto function
-        showUploadedPhoto(photoURL, photoName);
-      } catch (error) {
-          console.error('Error while getting photo', error);
-      } 
-    }
-
-    // Display all submissions
-    async function displaySubmissions() {
-      const photos = Parse.Object.extend('photos');
-      const query = new Parse.Query(photos);
-      const results = await query.ascending('createdAt').find();
-      const submissionList = document.querySelector('main ol');
-      console.log(results);
-  
-      results.forEach(function(submission) {
-          const id = submission.id;
-          const squarethumb = submission.get('squarethumb').url();
-          const title = submission.get('title');
-  
-          const theListItem = document.createElement('li');
-          theListItem.setAttribute('id', `r-${id}`);
-          theListItem.innerHTML =
-          
-          `<div class="titlename">
-            <h2>${title}<h/2>
-          </div>
-          <div class="photo">
-            <img src="${squarethumb}" alt="${title}">
-          </div>`
-  
-      submissionList.append(theListItem);
-      console.log(squarethumb);
-
-      });
-    }
-  
-    displaySubmissions();
     });
   
     async function handleImg(imageUrl, name, imgOrientation){
@@ -209,5 +155,59 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
       }
       // img.src = dataURL;
     });
+
+    // Get URL for photo
+    async function getNewPhoto(photoId){
+      // which "object" are we dealing with (database table)
+      const records = Parse.Object.extend('photos');
+      // make a new query
+      const query = new Parse.Query(records);
+      // Find the record you just added
+      query.equalTo("objectId", photoId);
+      try{
+        // results holds the whole record and meta data about the record
+        const results = await query.find();
+        // The .get() method gets a speficif field. The url() method is special for files
+        const photoURL = results[0].get('file').url();
+        // get the photo file name from the filename field
+        const photoName = results[0].get('filename');
+        // pass both values into the showUploadedPhoto function
+        showUploadedPhoto(photoURL, photoName);
+      } catch (error) {
+          console.error('Error while getting photo', error);
+      } 
+    }
+
+    // Display all submissions
+    async function displaySubmissions() {
+      const photos = Parse.Object.extend('photos');
+      const query = new Parse.Query(photos);
+      const results = await query.ascending('createdAt').find();
+      const submissionList = document.querySelector('main section');
+      console.log(results);
+  
+      results.forEach(function(submission) {
+          const id = submission.id;
+          const squarethumb = submission.get('squarethumb').url();
+          const title = submission.get('title');
+  
+          const theSubmissionItem = document.createElement('div');
+          theSubmissionItem.setAttribute('id', `r-${id}`);
+          theSubmissionItem.innerHTML =
+          
+          `<div class="titlename">
+            <h2>${title}<h/2>
+          </div>
+          <div class="photo">
+            <img src="${squarethumb}" alt="${title}">
+          </div>`
+  
+      submissionList.append(theSubmissionItem);
+      console.log(squarethumb);
+
+      });
+    }
+  
+    displaySubmissions();
 
 })();

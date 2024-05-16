@@ -19,7 +19,7 @@ h1 {
     font-size: 40px;
 }
 
-p, label {
+p, label, h2 {
     font-family: "Reddit Sans";
     font-size: 16px;
     line-height: 2rem;
@@ -142,5 +142,10 @@ label, input {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 80px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
     }
 }
