@@ -35,25 +35,22 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <section id="about" class="showing">
-        <h1>Tell me more.</h1>
+    <main>
+        <section id="about">
 
-        <p>Our experiences make us human, and sharing them connects us to one another. Tell your story through photo and written responses. Go outside of your comfort zone, share your wisdom and love, and of course, have fun.</p>
+            <h1>Tell me more.</h1>
+        
+            <p>Our experiences make us human, and sharing them connects us to one another. Tell your story through photo and written responses. Go outside of your comfort zone, share your wisdom and love, and of course, have fun.</p>
 
-        <button id="play" onclick="scrollFunction()">Play</button>
-    </section>
-    
-    <section id="response" class="hidden">
-        <section>
-            <div id="card" data-aos="flip-right">
+            <button id="play" onclick="scrollFunction()">Play</button>
+
+        </section>
+
+        <section id="q1">
+            <div id="card1" class="card" data-aos="flip-right">
                 <p id="prompt">What is a memory that makes you smile?</p>
             </div>
-        </section>
-        
-        <!-- <button id="select" onclick="scrollFunction2()">Select</button>
-        <button id="shuffle" onclick="shuffleFunction()">Shuffle</button> -->
 
-        <section>
             <form id="upload">
                 <label for="fileupload"></label>
                 <input type="file" id="fileupload">
@@ -64,21 +61,27 @@
                 <input id="submit" type="submit" value="Submit">
             </form>
         </section>
-    </section>
 
-    <div id="uploaded-img"></div>
-
-
-    <main>
-        <section class="container">
-
+        <section id="q2">
+            <div id="card2" class="card" data-aos="flip-right">
+                <p id="prompt">What is a memory that makes you smile?</p>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <p><a href="https://www.back4app.com/">Back4App</a></p>
-        <p><a href="https://www.npmjs.com/package/jimp">JIMP</a></p>
-        <p><a href="https://michalsnik.github.io/aos/">Animate on Scroll</a></p>
-    </footer>
+        <section id="q3">
+            <div id="card3" class="card" data-aos="flip-right">
+                <p id="prompt">What is a memory that makes you smile?</p>
+            </div>
+        </section>
+
+        <section>
+            <div id="uploaded-img"></div>
+
+            <section class="container">
+    
+            </section>
+        </section>
+
+    </main>
 </body>
 </html>

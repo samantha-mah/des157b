@@ -1,3 +1,14 @@
+const element = document.querySelector("main");
+
+element.addEventListener('wheel', (event) => {
+  event.preventDefault();
+
+  element.scrollBy({
+    left: event.deltaY < 0 ? -50 : 50,
+    
+  });
+});
+
 // Animate on Scroll
 AOS.init({
   duration: 1200,
@@ -5,13 +16,9 @@ AOS.init({
 
 // Scroll to card
 function scrollFunction() {
+  const card3 = document.querySelector('#card3');
 
-  const card = document.querySelector('#card');
-
-  document.querySelector('#about').className = 'hidden';
-  document.querySelector('#response').className = 'showing';
-
-  card.scrollIntoView({
+  card3.scrollIntoView({
       behavior: "smooth",
       block: "center",
       inline: "nearest"
