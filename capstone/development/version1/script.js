@@ -15,15 +15,95 @@ AOS.init({
 });
 
 // Scroll to card
-function scrollFunction() {
-  const card3 = document.querySelector('#card3');
+const start = document.querySelector('#start');
 
-  card3.scrollIntoView({
+start.addEventListener('click', function(e) {
+
+  e.preventDefault();
+  
+  const q1 = document.querySelector('#q1');
+
+  q1.scrollIntoView({
       behavior: "smooth",
       block: "center",
       inline: "nearest"
   });
-};
+})
+
+const upload1 = document.querySelector('#upload1');
+
+upload1.addEventListener('submit', function(e) {
+
+  e.preventDefault();
+
+  const q2 = document.querySelector('#q2');
+
+  q2.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest"
+  });
+})
+
+const upload2 = document.querySelector('#upload2');
+
+upload2.addEventListener('submit', function(e) {
+
+  e.preventDefault();
+
+  const q3 = document.querySelector('#q3');
+
+  q3.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest"
+  });
+})
+
+const upload3 = document.querySelector('#upload3');
+
+upload3.addEventListener('submit', function(e) {
+
+  e.preventDefault();
+
+  const q4 = document.querySelector('#q4');
+
+  q4.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest"
+  });
+})
+
+const upload4 = document.querySelector('#upload4');
+
+upload4.addEventListener('submit', function(e) {
+
+  e.preventDefault();
+
+  const q5 = document.querySelector('#q5');
+
+  q5.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest"
+  });
+})
+
+const upload5 = document.querySelector('#upload5');
+
+upload5.addEventListener('submit', function(e) {
+
+  e.preventDefault();
+
+  const results = document.querySelector('#results');
+
+  results.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest"
+  });
+})
 
 // JS here
 Parse.initialize("LjaN0AaAlVisq20wmpl4XlbghWz1LAFHVidMYSNb","3FHTRYEzDk53eEwQfxftjla9Flp8hNcewUJOzsFx");
