@@ -4,7 +4,7 @@ element.addEventListener('wheel', (event) => {
   event.preventDefault();
 
   element.scrollBy({
-    left: event.deltaY < 0 ? -50 : 50,
+    left: event.deltaY < 0 ? -10 : 10,
     
   });
 });
@@ -41,27 +41,27 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
 
   const submissionList = document.querySelector('main section');
 
-  document.querySelector('#upload').addEventListener('submit', function(event){
-    event.preventDefault();
-    title = document.querySelector('#title').value;
+  // document.querySelector('#upload').addEventListener('submit', function(event){
+  //   event.preventDefault();
+  //   title = document.querySelector('#title').value;
     
-    const fileUpload = document.querySelector('#fileupload');
-    if (fileUpload.files.length > 0) {
-        file = fileUpload.files[0];
-        const name = fileUpload.files[0].name;
-        const type = fileUpload.files[0].type;
+  //   const fileUpload = document.querySelector('#fileupload');
+  //   if (fileUpload.files.length > 0) {
+  //       file = fileUpload.files[0];
+  //       const name = fileUpload.files[0].name;
+  //       const type = fileUpload.files[0].type;
         
-        if(type == 'image/jpeg' || type == 'image/png'){
-          // Get the data URL of the image as a string
-          const fileAsDataURL = window.URL.createObjectURL(file);
-          console.log(fileAsDataURL);
-          handleImg(fileAsDataURL, name, imgOrientation);
-        } else { alert('the file is not a .jpg or .png file'); }
-    }
+  //       if(type == 'image/jpeg' || type == 'image/png'){
+  //         // Get the data URL of the image as a string
+  //         const fileAsDataURL = window.URL.createObjectURL(file);
+  //         console.log(fileAsDataURL);
+  //         handleImg(fileAsDataURL, name, imgOrientation);
+  //       } else { alert('the file is not a .jpg or .png file'); }
+  //   }
 
-    displaySubmissions();
+  //   displaySubmissions();
 
-  });
+  // });
 
   async function handleImg(imageUrl, name, imgOrientation){
     //console.log('in here');
