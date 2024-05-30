@@ -1,3 +1,5 @@
+alert("You are a college student who wants to capture memories from the present for your future self and future generations to look back on. Read about this interactive project, and complete the fields to create your time capsule.");
+
 const element = document.querySelector("main");
 
 element.addEventListener('wheel', (event) => {
@@ -168,7 +170,6 @@ back5.addEventListener('click', function(e) {
 
 })
 
-
 // JS here
 Parse.initialize("LjaN0AaAlVisq20wmpl4XlbghWz1LAFHVidMYSNb","3FHTRYEzDk53eEwQfxftjla9Flp8hNcewUJOzsFx");
 Parse.serverURL = 'https://parseapi.back4app.com/';
@@ -182,28 +183,28 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
   let resizedImg = false;
   let file;
 
-  const submissionList = document.querySelector('main section');
+  const submissionList = document.querySelector('section article div');
 
-  // document.querySelector('#form').addEventListener('submit', function(event){
-  //   event.preventDefault();
+  document.querySelector('#form1').addEventListener('submit', function(event){
+    event.preventDefault();
     
-  //   const fileform = document.querySelector('#fileform');
-  //   if (fileform.files.length > 0) {
-  //       file = fileform.files[0];
-  //       const name = fileform.files[0].name;
-  //       const type = fileform.files[0].type;
+    const question5 = document.querySelector('#question5');
+    if (question5.files.length > 0) {
+        file = question5.files[0];
+        const name = question5.files[0].name;
+        const type = question5.files[0].type;
         
-  //       if(type == 'image/jpeg' || type == 'image/png'){
-  //         // Get the data URL of the image as a string
-  //         const fileAsDataURL = window.URL.createObjectURL(file);
-  //         console.log(fileAsDataURL);
-  //         handleImg(fileAsDataURL, name, imgOrientation);
-  //       } else { alert('the file is not a .jpg or .png file'); }
-  //   }
+        if(type == 'image/jpeg' || type == 'image/png'){
+          // Get the data URL of the image as a string
+          const fileAsDataURL = window.URL.createObjectURL(file);
+          console.log(fileAsDataURL);
+          handleImg(fileAsDataURL, name, imgOrientation);
+        } else { alert('the file is not a .jpg or .png file'); }
+    }
 
-  //   displaySubmissions();
+    displaySubmissions();
 
-  // });
+  });
 
   async function handleImg(imageUrl, name, imgOrientation){
     //console.log('in here');
