@@ -71,7 +71,7 @@ back3.addEventListener('click', function(e) {
     inline: "center"
   });
 
-})
+});
 
 back4.addEventListener('click', function(e) {
   e.preventDefault();
@@ -101,6 +101,7 @@ const button2 = document.querySelector("#submit2");
 const button3 = document.querySelector("#submit3");
 const button4 = document.querySelector("#submit4");
 const button5 = document.querySelector("#submit5");
+const button6 = document.querySelector("#submit6");
 
 // const textFields = document.querySelectorAll('input[type=text]');
 
@@ -167,6 +168,35 @@ button2.addEventListener('click', function(event) {
 
   moveForward('q2', 'q3', 'error2');
 });
+
+button3.addEventListener('click', function(event) {
+  event.preventDefault();
+  console.log("clicked");
+
+  moveForward('q3', 'q4', 'error3');
+});
+
+button4.addEventListener('click', function(event) {
+  event.preventDefault();
+  console.log("clicked");
+
+  moveForward('q4', 'q5', 'error4');
+});
+
+button5.addEventListener('click', function(event) {
+  event.preventDefault();
+  console.log("clicked");
+
+  moveForward('q5', 'q6', 'error5');
+});
+
+button6.addEventListener('click', function(event) {
+  event.preventDefault();
+  console.log("clicked");
+
+  moveForward('q6', 'error6');
+});
+
 
 // JS here
 Parse.initialize("x8pe5MVzOB0aP6AEgUIqcBcoaYCttI8wHaipLfZ5","9NnD7F8ySbT4z5ZQFp7Abnshl4dP2il7Mvvh5vCC");

@@ -161,34 +161,6 @@ form {
     align-items: center;
 }
 
-#q2 {
-    background-color: azure;
-}
-
-#q3 {
-    background-color: pink;
-}
-
-#q3 {
-    background-color: violet;
-}
-
-#q4 {
-    background-color: white;
-}
-
-#q5 {
-    background-color: yellow;
-}
-
-#q6 {
-    background-color: yellowgreen;
-}
-
-#q7 {
-    background-color: black;
-}
-
 section {
     width: 100vw;
     height: 100vh;
@@ -208,4 +180,9 @@ section article {
 
 #question2, #question4, #question5 {
     height: 100px;
+}
+
+#nostalgic, #joy, #calm {
+    display: inline;
+    margin-right: 8px;
 }
