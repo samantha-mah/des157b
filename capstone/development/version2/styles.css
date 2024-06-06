@@ -25,6 +25,7 @@ p, label, h2, input {
     font-family: "Reddit Sans";
     font-size: 16px;
     line-height: 2rem;
+    color: #333;
 }
 
 h2 {
@@ -33,7 +34,7 @@ h2 {
     top: 350px;
 }
 
-a, .submit {
+a, .submit, button {
     font-family: "Reddit Sans";
     font-size: 18px;
     font-weight: 500;
@@ -102,20 +103,10 @@ a {
     text-decoration: none;
 }
 
-/* #upload {
-    border: solid #C8C8C8;
-    width: 270px;
-    height: 378px;
-    border-radius: 16px;
-} */
 
 #form {
     margin: auto;
 }
-
-/* label, input {
-    margin: 16px 0 0 16px;
-} */
 
 #titlename {
     position: relative;
@@ -185,4 +176,31 @@ section article {
 #nostalgic, #joy, #calm {
     display: inline;
     margin-right: 8px;
+}
+
+#my-audio {
+    opacity: 0;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.showing {
+    opacity: 1;
+}
+
+.fa-volume-xmark, .fa-volume-low{
+    position: absolute;
+    font-size: 36px;
+    color: #000;
+    top: 7vw;
+    right: 2vw;
+}
+
+.q {
+    font-family: "Reddit Sans";
+    font-size: 16px;
+    line-height: 2rem;
+    font-weight: 600;
 }

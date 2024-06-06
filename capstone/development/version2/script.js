@@ -160,9 +160,6 @@ button5.addEventListener('click', function(event) {
   moveForward('q5', 'q6', 'error5');
 });
 
-
-
-
 // JS here
 Parse.initialize("x8pe5MVzOB0aP6AEgUIqcBcoaYCttI8wHaipLfZ5","9NnD7F8ySbT4z5ZQFp7Abnshl4dP2il7Mvvh5vCC");
 Parse.serverURL = 'https://parseapi.back4app.com/';

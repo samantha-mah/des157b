@@ -27,19 +27,22 @@ async function retrieveRecord(recordId) {
         const dataObject = await query.get(recordId);
 
         // Retrieve the data
-        const text1 = dataObject.get("q1");
-        const text2 = dataObject.get("q2");
-        const file1 = dataObject.get("q3");
-        const text4 = dataObject.get("q4");
-        const file2 = dataObject.get("q5");
+        const file1 = dataObject.get("q1");
+        const text1 = dataObject.get("q2");
+        const text2 = dataObject.get("q3");
+        const text3 = dataObject.get("q4");
+        const text4 = dataObject.get("q5");
+        const text5 = dataObject.get("q6");
 
 
         a1.innerHTML =`<img src="${file1.url()}" alt="image 1">`;
-        a2.innerHTML =`a2 ${text2}`;
-        a3.innerHTML =`a3 ${text3}`;
-        a4.innerHTML =`a4 ${text4}`;
-        a5.innerHTML =`a5 ${text5}`;
-        atob6.innerHTML =`a6 ${text6}`;
+        a2.innerHTML =`<audio id="my-audio" controls>
+        <source src="audio/${text1}.mp3" type="audio/mpeg">
+        </audio>`;
+        a3.innerHTML =`${text2}`;
+        a4.innerHTML =`${text3}`;
+        a5.innerHTML =`${text4}`;
+        a6.innerHTML =`${text5}`;
 
         
     } catch (error) {
@@ -52,3 +55,49 @@ async function retrieveRecord(recordId) {
 if(recordId){
     retrieveRecord(recordId);
 }
+
+const results = window.location;
+
+console.log(results);
+
+const shareLink = document.querySelector('button');
+
+shareLink.addEventListener('click', function(event) {
+  event.preventDefault();
+  console.log("clicked");
+  alert(`To share this page, copy this link, ${results}`);
+})
+
+var isAudioPlayed = false;
+
+function playAudio() {
+    isAudioPlayed = true;
+    const myAudio = document.getElementById("my-audio");
+    myAudio.play();
+}
+
+
+document.body.onclick = ()=>{
+    if(isAudioPlayed) return ;
+    playAudio();
+}
+
+const muteBtn = document.querySelector('.fa-volume-xmark');
+const unmuteBtn = document.querySelector('.fa-volume-low');
+const myAudio = document.getElementById("my-audio");
+
+unmuteBtn.addEventListener('click', function() {
+    myAudio.muted = false;
+    myAudio.volume = 0.5;
+    muteBtn.className = 'hidden fa-solid fa-volume-xmark';
+    unmuteBtn.className = 'showing fa-solid fa-volume-low';
+    muteBtn.style.zIndex = "10";
+});
+
+muteBtn.addEventListener('click', function() {
+    myAudio.muted = true;
+    myAudio.volume = 0;
+    muteBtn.className = 'showing fa-solid fa-volume-xmark';
+    unmuteBtn.className = 'hidden fa-solid fa-volume-low';
+    unmuteBtn.style.zIndex = "10";
+})
