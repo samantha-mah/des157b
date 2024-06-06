@@ -1,6 +1,5 @@
 alert("You are a college student who wants to capture memories from the present for your future self and future generations to look back on. Read about this interactive project, and complete the fields to create your time capsule.");
 
-const answers = [];
 
 const element = document.querySelector("main");
 
@@ -103,34 +102,6 @@ const button4 = document.querySelector("#submit4");
 const button5 = document.querySelector("#submit5");
 const button6 = document.querySelector("#submit6");
 
-// const textFields = document.querySelectorAll('input[type=text]');
-
-// button1.addEventListener('click', function(event) {
-//   event.preventDefault();
-//   console.log("clicked");
-
-//   const q1 = document.querySelector('#question1').value;
-
-//   if(q1 == "") {
-//     const error1 = document.querySelector("#error1");
-//     error1.innerHTML = "Please provide an input";
-//     // error1.setAttribute("class", "error");
-//     document.querySelector("#question1").focus();
-//   }
-  
-//   else {
-//     document.querySelector("#a1").innerHTML = q1;
-//     // document.querySelector("#a1").className = ("user-input");
-
-//     const q2 = document.querySelector('#q2');
-
-//     q2.scrollIntoView({
-//         behavior: "smooth",
-//         block: "center",
-//         inline: "nearest"
-//     });
-//   }
-// });
 
 function moveForward(thisElement, nextElement, thisError){
   const thisQuestion = document.querySelector(`#${thisElement}`).value;
@@ -143,7 +114,6 @@ function moveForward(thisElement, nextElement, thisError){
   }
   
   else {
-    answers.push(thisQuestion);
 
     const nextQuestion = document.querySelector(`#${nextElement}`);
 
@@ -190,12 +160,7 @@ button5.addEventListener('click', function(event) {
   moveForward('q5', 'q6', 'error5');
 });
 
-button6.addEventListener('click', function(event) {
-  event.preventDefault();
-  console.log("clicked");
 
-  moveForward('q6', 'error6');
-});
 
 
 // JS here
@@ -267,18 +232,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
 
   async function resizeImg(imageUrl, name, imgOrientation){
     
-    /* let squareThumb;
-    // make a square thumbnail for any image...
-    const image = await Jimp.read(imageUrl);
-    image.cover(250, 250).getBase64('image/jpeg', (err, result) => {
-        if(err){
-            console.log(err);
-        } else {
-          squareThumb = result;
-          //console.log(squareThumb);
-        }
-    }); */
-    // if the image needs to be resized...
+    
     if(resizedImg == true){
       const image2 = await Jimp.read(imageUrl);
       // resize portrait and square images
@@ -339,29 +293,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
   }
 
 
-  // Original version
-  /* async function formData(name, originalFile, resizedFile, squareThumb){
-    const myNewObject = new Parse.Object('photos');
-    myNewObject.set('filename', name);
-    // handle images that have been resized...
-    if(resizedFile){
-      myNewObject.set('resizedfile', new Parse.File(name, { base64: resizedFile }));
-    } else { // handle images that have not been resized.
-      myNewObject.set('resizedfile', new Parse.File(name, originalFile));
-    }
-
-    myNewObject.set('squarethumb', new Parse.File(name, { base64: squareThumb }));
-    try {
-      const result = await myNewObject.save();
-
-      // Clear out the submissionList and set it again with the new image included...
-      submissionList.innerHTML='';
-      displaySubmissions();
-    } catch (error) {
-      console.error('Error while creating pictures: ', error);
-    }
-  } */
-
+  
   // Helper function 
   // this came off of stack overflow. I tried to rewrite it in a more readable
   // way, but I have not been successful yet.
@@ -448,9 +380,19 @@ form.addEventListener('submit', function(event){
 // this takes the data from the form and sends it to Back4App
 async function handleSubmit() {
 
+  const radioButtons = document.querySelectorAll('#form2 input');
+
+  let radioValue;
+  for( const eachButton of radioButtons){
+    if(eachButton.checked){
+      radioValue = eachButton.value;
+    }
+  }
+  console.log(radioValue);
+
     // Get the form data
     const file1 = document.getElementById('question1').files[0];
-    const text1 = document.getElementById('question2').value;
+    const text1 = radioValue;
     const text2 = document.getElementById('question3').value;
     const text3 = document.getElementById('question4').value;
     const text4 = document.getElementById('question5').value;
@@ -492,55 +434,4 @@ async function handleSubmit() {
     } catch (error) {
         alert("Failed to save data: " + error.message);
     }
-}
-
-//Get the record ID from the URL
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const recordId = urlParams.get('id');
-//alert(recordId);
-
-//add variables for where to stick the content on the page
-const a1 = document.querySelector('#a1');
-const a2 = document.querySelector('#a2');
-const a3 = document.querySelector('#a3');
-const a4 = document.querySelector('#a4');
-const a5 = document.querySelector('#a5');
-const a6 = document.querySelector('#a6');
-
-// This function asychronously gets the data from the record and puts it on the page
-async function retrieveRecord(recordId) {
-    // Create a query for the specific class (in this case I named the table Records)
-    const DataObject = Parse.Object.extend("Records");
-    const query = new Parse.Query(DataObject);
-
-    try {
-        // Get the object by ID
-        const dataObject = await query.get(recordId);
-
-        // Retrieve the data
-        const text1 = dataObject.get("q1");
-        const text2 = dataObject.get("q2");
-        const file1 = dataObject.get("q3");
-        const text4 = dataObject.get("q4");
-        const file2 = dataObject.get("q5");
-
-
-        a1.innerHTML =`<img src="${file1.url()}" alt="image 1">`;
-        a2.innerHTML =`a2 ${text2}`;
-        a3.innerHTML =`a3 ${text3}`;
-        a4.innerHTML =`a4 ${text4}`;
-        a5.innerHTML =`a5 ${text5}`;
-        atob6.innerHTML =`a6 ${text6}`;
-
-        
-    } catch (error) {
-        console.error("Error while retrieving record: " + error.message);
-    }
-}
-
-// This if statement makes sure the retrieveRecord function ony runs if an id is there
-// Probably more should be done to handle errors here.
-if(recordId){
-    retrieveRecord(recordId);
 }
