@@ -8,7 +8,10 @@ body {
 }
 
 img {
-    max-width: 100%;
+    max-width: 25vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input, textarea {
@@ -153,7 +156,7 @@ form {
 }
 
 section {
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
     box-sizing: border-box;
     margin: auto;
@@ -202,5 +205,23 @@ section article {
     font-family: "Reddit Sans";
     font-size: 16px;
     line-height: 2rem;
-    font-weight: 600;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+#a2, #a3, #a4, #a5, #a6 {
+    padding-bottom: 32px;
+    font-family: "Gochi Hand";
+    font-size: 32px;
+    margin-top: 8px;
+}
+
+#a1 {
+    margin-top: 1500px;
+}
+
+#results {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
