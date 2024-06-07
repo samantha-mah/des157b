@@ -70,18 +70,21 @@
             </div>
               
             <div id="form2">
+                <div class="audio">
+                    <input type="radio" id="nostalgic" value="nostalgic"><label for="nostalgic">Nostalgic</label>
+                    <audio controls src="audio/nostalgic.mp3" type="audio/mpeg"></audio>
+                </div>
                 
-                <input type="radio" id="nostalgic" value="nostalgic"><label for="nostalgic">Nostalgic</label>
-                <audio controls>
-                    <source src="audio/nostalgic.mp3" type="audio/mpeg">
-                </audio>
-
-                <input type="radio" id="joy" value="joy"><label for="joy">Joy</label><br>
-                <audio controls src="audio/joy.mp3" type="audio/mpeg"></audio><br>
-
-                <input type="radio" id="calm" value="calm"><label for="calm">Calm</label>
-                <audio controls src="audio/calm.mp3" type="audio/mpeg"></audio><br>
-
+                <div class="audio">
+                    <input type="radio" id="joy" value="joy"><label for="joy">Joy</label>
+                    <audio controls src="audio/joy.mp3" type="audio/mpeg"></audio>
+                </div>
+                
+                <div class="audio">
+                    <input type="radio" id="calm" value="calm"><label for="calm">Calm</label>
+                    <audio controls src="audio/calm.mp3" type="audio/mpeg"></audio>
+                </div>
+                
                 <div class="error" id="error2"></div>
             
                 <div class="controls">
