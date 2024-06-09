@@ -1,0 +1,179 @@
+body {
+    color: #333;
+    margin: auto;
+    text-align: left;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100vw;
+}
+
+img {
+    max-width: 100%;
+}
+
+input, textarea {
+    display: block;
+    margin-bottom: 32px;
+}
+
+h1 {
+    font-family: "Gochi Hand";
+    font-size: 80px;
+}
+
+p, label, h2, input {
+    font-family: "Reddit Sans";
+    font-size: 16px;
+    line-height: 2rem;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    position: relative;
+    top: 350px;
+}
+
+a, .submit, button {
+    font-family: "Reddit Sans";
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    color: #fff;
+    border-radius: 4px;
+    background: #333;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+.back {
+    font-family: "Reddit Sans";
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    color: #333;
+    background: #fff;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+}
+
+.error {
+    font-family: "Reddit Sans";
+    font-size: 14px;
+    font-weight: 400;
+    padding: 16px 0;
+    color: #777;
+    background: #fff;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+}
+
+.card {
+    height: 270px;
+    width: 378px;
+    margin: 50px auto;
+    border-radius: 16px;
+    background-image: url('images/card.png');
+    background-size: cover;
+    /* background-position: bottom; */
+    -webkit-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+    box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+}
+
+.card p {
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+    display: block;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    color: #C8C8C8;
+    text-decoration: none;
+}
+
+
+#form {
+    margin: auto;
+}
+
+#titlename {
+    position: relative;
+    bottom: 80px;
+}
+
+#fileupload {
+    margin-bottom: 32px;
+}
+
+#submit {
+    margin: 120px auto 0 auto;
+}
+
+img {
+    border-top: 20px solid #F0EFEB;
+    border-right: 20px solid #F0EFEB;
+    border-bottom: 100px solid #F0EFEB;
+    border-left: 20px solid #F0EFEB;
+    -webkit-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+    box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
+}
+
+/* The progress container (grey background) */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+  }
+  
+/* The progress bar (scroll indicator) */
+.progress-bar {
+    height: 8px;
+    background: #04AA6D;
+    width: 0%;
+}
+
+form {
+    display: flex;    
+    width: 700vw;
+    margin: 0 auto;
+    align-items: center;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: auto;
+    display: grid;
+    place-content: center;
+}
+
+section article {
+    width: 50vw;
+}
+
+#question1, #question3, #question2, #question4, #question5 {
+    width: 378px;
+}
+
+#question2, #question4, #question5 {
+    height: 100px;
+}
+
+#nostalgic, #joy, #calm {
+    display: inline;
+    margin-right: 8px;
+}

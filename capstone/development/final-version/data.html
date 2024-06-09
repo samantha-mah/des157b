@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Animate on Scroll CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Add link to any google fonts used here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- My Styles -->
+    <link href="datastyles.css" rel="stylesheet">
+
+    <!-- Meta tag for mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Animate on Scroll JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+    <!--/ /-------- Load Parse Library --------/ /-->
+    <script src="https://npmcdn.com/parse/dist/parse.min.js" defer></script>
+    
+    <!--/ /-------- Load Jimp Library --------/ /-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jimp/0.22.8/jimp.min.js" defer></script>
+
+    <!-- My Script -->
+    <script src="datascript.js" defer></script>
+
+</head>
+<body>
+    <section>
+            <article id="results">
+                <div>
+                    <p class="q">A memory that makes me smile is</p>
+                    <p id="a1"></p>
+
+                    <p id="a2"></p>
+
+                    <p class="q">The accomplishments I am most proud of are</p>
+                    <p id="a3"></p>
+
+                    <p class="q">What is your favorite family tradition?</p>
+                    <p id="a4"></p>
+
+                    <p class="q">What family recipe would you like to pass on?</p>
+                    <p id="a5"></p>
+
+                    <p class="q">What piece of wisdom can you share with me?</p>
+                    <p id="a6"></p>
+                </div>
+
+            <button>Get the link!</button>
+
+            <section id="controls">
+                <i class="showing fa-solid fa-volume-xmark"></i>
+                <i class="hidden fa-solid fa-volume-low"></i>
+            </section>
+        </article>
+    </section>
+</body>
+</html>

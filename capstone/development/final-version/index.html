@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Usability Test</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Animate on Scroll CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Add link to any google fonts used here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Meta tag for mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Animate on Scroll JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+    <!--/ /-------- Load Parse Library --------/ /-->
+    <script src="https://npmcdn.com/parse/dist/parse.min.js" defer></script>
+    
+    <!--/ /-------- Load Jimp Library --------/ /-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jimp/0.22.8/jimp.min.js" defer></script>
+
+    <!-- My Script -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form enctype="multipart/form-data" id="userdata">
+        <section id="about">
+            <article>
+                <h1>Tell me more.</h1>
+        
+                <p>Our experiences make us human, and sharing them connects us to one another. Tell your story through photo and written responses. Go outside of your comfort zone, share your wisdom and love, and of course, have fun.</p>
+    
+                <a id="start">Start</a>    
+            </article>
+        </section>
+
+        <section id="q1">
+            <div id="card1" class="card" data-aos="flip-right">
+                <p id="prompt">What is a memory that makes you smile?</p>
+            </div>
+              
+            <div id="form1">
+                <label for="question1"></label>
+                <input type="file" id="question1">
+                <div class="error" id="error1"></div>
+            
+                <div class="controls">
+                    <a class="back" id="back1">Back</a>    
+                    <a id="submit1" class="submit">Next</a>  
+                </div>
+            </div>
+
+        </section>
+
+        <section id="q2">
+            <div id="card2" class="card" data-aos="flip-right">
+                <p id="prompt">How does this memory make you feel?</p>
+            </div>
+              
+            <div id="form2">
+                <div class="audio">
+                    <input type="radio" id="nostalgic" value="nostalgic"><label for="nostalgic">Nostalgic</label>
+                    <audio controls src="audio/nostalgic.mp3" type="audio/mpeg"></audio>
+                </div>
+                
+                <div class="audio">
+                    <input type="radio" id="joy" value="joy"><label for="joy">Joy</label>
+                    <audio controls src="audio/joy.mp3" type="audio/mpeg"></audio>
+                </div>
+                
+                <div class="audio">
+                    <input type="radio" id="calm" value="calm"><label for="calm">Calm</label>
+                    <audio controls src="audio/calm.mp3" type="audio/mpeg"></audio>
+                </div>
+                
+                <div class="error" id="error2"></div>
+            
+                <div class="controls">
+                    <a class="back" id="back2">Back</a>    
+                    <a id="submit2" class="submit">Next</a>  
+                </div>
+            </div>
+
+        </section>
+
+        <section id="q3">
+            <div id="card3" class="card" data-aos="flip-right">
+                <p id="prompt">What accomplishments in life are you most proud of?</p>
+            </div>
+              
+            <div id="form3">
+                <label for="question3"></label>
+                <input type="text" id="question3">
+                <div class="error" id="error3"></div>
+                        
+                <div class="controls">
+                    <a class="back" id="back3">Back</a>    
+                    <a id="submit3" class="submit">Next</a>  
+                </div>
+            </div>
+        </section>
+
+        <section id="q4">
+            <div id="card4" class="card" data-aos="flip-right">
+                <p id="prompt">What is your favorite family tradition?</p>
+            </div>
+              
+            <div id="form4">
+                <label for="question4"></label>
+                <input type="text" id="question4">
+                <div class="error" id="error1"></div>
+                        
+                <div class="controls">
+                    <a class="back" id="back4">Back</a>    
+                    <a id="submit4" class="submit">Next</a>  
+                </div>
+            </div>
+        </section>
+
+        <section id="q5">
+            <div id="card5" class="card" data-aos="flip-right">
+                <p id="prompt">What family recipe would you like to pass on?</p>
+            </div>
+              
+            <div id="form5">
+                <label for="question5"></label>
+                <input type="text" id="question5">
+                <div class="error" id="error5"></div>
+                        
+                <div class="controls">
+                    <a class="back" id="back5">Back</a>    
+                    <a id="submit5" class="submit">Next</a>  
+                </div>    
+            </div>
+        </section>
+
+        <section id="q6">
+            <div id="card5" class="card" data-aos="flip-right">
+                <p id="prompt">What piece of wisdom can you share with me?</p>
+            </div>
+              
+            <div id="form6">
+                <label for="question6"></label>
+                <input type="text" id="question6">
+                <div class="error" id="error6"></div>
+                        
+                <div class="controls">
+                    <a class="back" id="back5">Back</a>    
+                    <input type="submit" id="submit6" class="submit" value="Submit"> 
+                </div>    
+            </div>
+        </section>
+    </form>
+
+</body>
+</html>
