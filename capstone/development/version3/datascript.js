@@ -15,6 +15,7 @@ const a3 = document.querySelector('#a3');
 const a4 = document.querySelector('#a4');
 const a5 = document.querySelector('#a5');
 const a6 = document.querySelector('#a6');
+let myAudio;
 
 // This function asychronously gets the data from the record and puts it on the page
 async function retrieveRecord(recordId) {
@@ -39,6 +40,7 @@ async function retrieveRecord(recordId) {
         a2.innerHTML =`<audio id="my-audio" controls>
         <source src="audio/${text1}.mp3" type="audio/mpeg">
         </audio>`;
+        myAudio = document.querySelector("#my-audio");
         a3.innerHTML =`${text2}`;
         a4.innerHTML =`${text3}`;
         a5.innerHTML =`${text4}`;
@@ -72,10 +74,9 @@ var isAudioPlayed = false;
 
 function playAudio() {
     isAudioPlayed = true;
-    const myAudio = document.getElementById("my-audio");
     myAudio.play();
+    myAudio.volume = 0.1;
 }
-
 
 document.body.onclick = ()=>{
     if(isAudioPlayed) return ;
@@ -84,20 +85,26 @@ document.body.onclick = ()=>{
 
 const muteBtn = document.querySelector('.fa-volume-xmark');
 const unmuteBtn = document.querySelector('.fa-volume-low');
-const myAudio = document.getElementById("my-audio");
 
-unmuteBtn.addEventListener('click', function() {
-    myAudio.muted = false;
-    myAudio.volume = 0.5;
-    muteBtn.className = 'hidden fa-solid fa-volume-xmark';
-    unmuteBtn.className = 'showing fa-solid fa-volume-low';
-    muteBtn.style.zIndex = "10";
-});
+document.addEventListener('click', function(event) {
+    event.preventDefault();
 
-muteBtn.addEventListener('click', function() {
-    myAudio.muted = true;
-    myAudio.volume = 0;
-    muteBtn.className = 'showing fa-solid fa-volume-xmark';
-    unmuteBtn.className = 'hidden fa-solid fa-volume-low';
-    unmuteBtn.style.zIndex = "10";
+    if (event.target.classList.contains('fa-solid')) {
+        console.log('clicked');
+        if (myAudio.muted) {
+            myAudio.muted = false;
+            myAudio.volume = 0.1;
+            muteBtn.className = 'hidden fa-solid fa-volume-xmark';
+            unmuteBtn.className = 'showing fa-solid fa-volume-low';
+            muteBtn.style.zIndex = "10";
+        }
+
+        else {
+            myAudio.muted = true;
+            myAudio.volume = 0;
+            muteBtn.className = 'showing fa-solid fa-volume-xmark';
+            unmuteBtn.className = 'hidden fa-solid fa-volume-low';
+            unmuteBtn.style.zIndex = "10";
+        }
+    }
 })
