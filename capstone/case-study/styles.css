@@ -14,30 +14,21 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-}
-nav {
-    border-top: 2px solid #333;
-}
 nav ul li a {
     text-decoration: none;
     display: block;
     color:cornflowerblue;
     font-weight: bold;
-    border-bottom: 2px solid #333;
     text-align: center;
     padding: 10px;
-
 }
 
-header, footer {
+footer {
     background-color: rgb(235, 235, 235);
 }
 
 header, section, footer {
-    padding: 20px;
+    padding: 100px;
 }
 
 section:nth-child(even){
@@ -52,9 +43,13 @@ h1, h2 {
     margin-bottom: .5em;
 }
 
-p {
+p, a, li {
     line-height: 1.4em;
     margin-bottom: 1em;
+    font-family: "Reddit Sans";
+    font-size: 16px;
+    line-height: 2rem;
+    color: #333;
 }
 
 ol li {
@@ -63,6 +58,34 @@ ol li {
 
 img {
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+h1 {
+    font-family: "Reddit Sans";
+    font-size: 36px;
+}
+
+h2 {
+    font-family: "Gochi Hand";
+    font-size: 24px;
+}
+
+h3 {
+    font-family: "Reddit Sans";
+    font-size: 18px;
+}
+
+#contact {
+    display: flex;
+    gap: 8px;
+}
+
+header {
+    background-image: url(images/banner.jpg);
+    background-size: cover;
 }
 
 @media only screen and (min-width: 768px) {
@@ -71,14 +94,13 @@ img {
 }
 
 @media only screen and (min-width: 1000px) {
-    .container{ margin: auto; }
+    .container { 
+        margin: auto;
+        width: 50vw;
+    }
+    
     nav ul {
         max-width: 1000px;
         margin: auto;
-    }
-    .content { 
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
     }
 }

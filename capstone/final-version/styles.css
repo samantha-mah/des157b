@@ -121,30 +121,6 @@ a {
     margin: 120px auto 0 auto;
 }
 
-img {
-    border-top: 20px solid #F0EFEB;
-    border-right: 20px solid #F0EFEB;
-    border-bottom: 100px solid #F0EFEB;
-    border-left: 20px solid #F0EFEB;
-    -webkit-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
-    box-shadow: 8px 8px 32px 0px rgba(0,0,0,0.25);
-}
-
-/* The progress container (grey background) */
-.progress-container {
-    width: 100%;
-    height: 8px;
-    background: #ccc;
-  }
-  
-/* The progress bar (scroll indicator) */
-.progress-bar {
-    height: 8px;
-    background: #04AA6D;
-    width: 0%;
-}
-
 form {
     display: flex;    
     width: 700vw;
@@ -161,10 +137,6 @@ section {
     place-content: center;
 }
 
-section article {
-    width: 50vw;
-}
-
 #question1, #question3, #question2, #question4, #question5 {
     width: 378px;
 }
@@ -177,3 +149,9 @@ section article {
     display: inline;
     margin-right: 8px;
 }
+
+#start {
+    background-color: #FC9310;
+    color: #fff;
+}
+
