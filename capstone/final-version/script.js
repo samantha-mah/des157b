@@ -2,8 +2,6 @@
 Parse.initialize("x8pe5MVzOB0aP6AEgUIqcBcoaYCttI8wHaipLfZ5","9NnD7F8ySbT4z5ZQFp7Abnshl4dP2il7Mvvh5vCC");
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
-alert("You are a college student who wants to capture memories from the present for your future self and future generations to look back on. Read about this interactive project, and complete the fields to create your time capsule.");
-
 const element = document.querySelector("main");
 
 // element.addEventListener('wheel', (event) => {

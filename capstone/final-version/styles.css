@@ -91,6 +91,7 @@ a, .submit, button {
     text-align: center;
     color: #333;
     display: block;
+    padding-top: 88px;
 }
 
 footer {
