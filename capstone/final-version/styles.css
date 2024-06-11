@@ -137,12 +137,9 @@ section {
     place-content: center;
 }
 
-#question1, #question3, #question2, #question4, #question5 {
-    width: 378px;
-}
-
-#question2, #question4, #question5 {
+#question2, #question3, #question4, #question5, #question6 {
     height: 100px;
+    width: 378px;
 }
 
 #nostalgic, #joy, #calm {
@@ -155,3 +152,6 @@ section {
     color: #fff;
 }
 
+section article {
+    width: 50vw;
+}
